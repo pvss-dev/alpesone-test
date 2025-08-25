@@ -1,18 +1,60 @@
 services:
+    # --- PHP Application Service ---
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: alpesone-app
+        restart: unless-stopped
+        volumes:
+            - ./:/var/www/html
+        depends_on:
+            mysql:
+                condition: service_healthy
+        networks:
+            - alpesone_network
+
+    # --- Web server (Nginx) to serve the application ---
+    nginx:
+        image: nginx:1.29-alpine
+        container_name: alpesone-nginx
+        restart: unless-stopped
+        volumes:
+            - ./:/var/www/html
+            - ./.docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - app
+        networks:
+            - alpesone_network
+        ports:
+            - "80:80"
+
+    # --- Database Service (MySQL) ---
     mysql:
         image: mysql:8.0
-        container_name: mysql
-        restart: always
+        container_name: alpesone-mysql
+        restart: unless-stopped
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_USER: ${DB_USERNAME}
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+        networks:
+            - alpesone_network
         ports:
             - '3306:3306'
         volumes:
             - mysql_data:/var/lib/mysql
+        healthcheck:
+            test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
 
 volumes:
     mysql_data:
         driver: local
+
+networks:
+    alpesone_network:
+        driver: bridge
