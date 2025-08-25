@@ -1,0 +1,345 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Alpes One API - Technical Test",
+        "description": "API for the Junior Back-End Developer technical test",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000",
+            "description": "Local Development Server"
+        }
+    ],
+    "paths": {
+        "/api/vehicles": {
+            "get": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "List all vehicles",
+                "operationId": "043b3ce51f006f946511103cfe1c2ca1",
+                "responses": {
+                    "200": {
+                        "description": "Paged list of vehicles",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Vehicle"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Creates a new vehicle",
+                "operationId": "74e9ae3e5f1ee2f69f3a177820d204b9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Vehicle"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Vehicle created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/vehicles/{id}": {
+            "get": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Displays a specific vehicle",
+                "operationId": "874afdd20b81543018ea4033fc5e914c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Vehicle data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Vehicle not found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Upgrades an existing vehicle",
+                "operationId": "170b50ff07739fd3e9a2f910611ea552",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Vehicle"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Vehicle updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Vehicle"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Vehicle not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Deletes a vehicle",
+                "operationId": "24688b0d004995602e93b8c1966e6676",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Vehicle successfully deleted"
+                    },
+                    "404": {
+                        "description": "Vehicle not found"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Vehicle": {
+                "title": "Vehicle",
+                "description": "Model of a vehicle",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": true,
+                        "example": 1
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "carro"
+                    },
+                    "brand": {
+                        "type": "string",
+                        "example": "Hyundai"
+                    },
+                    "model": {
+                        "type": "string",
+                        "example": "CRETA"
+                    },
+                    "version": {
+                        "type": "string",
+                        "example": "CRETA 16A ACTION"
+                    },
+                    "year_model": {
+                        "type": "string",
+                        "example": "2025"
+                    },
+                    "year_build": {
+                        "type": "string",
+                        "example": "2025"
+                    },
+                    "optionals": {
+                        "type": "string",
+                        "example": "Informações extras",
+                        "nullable": true
+                    },
+                    "doors": {
+                        "type": "integer",
+                        "example": 5
+                    },
+                    "board": {
+                        "type": "string",
+                        "example": "BRA2E19"
+                    },
+                    "chassi": {
+                        "type": "string",
+                        "example": "4TUKBM8WFSJTH1635",
+                        "nullable": true
+                    },
+                    "transmission": {
+                        "type": "string",
+                        "example": "Automática"
+                    },
+                    "km": {
+                        "type": "integer",
+                        "example": 24208
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Carro em ótimo estado de conservação, único dono, revisões em dia.",
+                        "nullable": true
+                    },
+                    "sold": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "category": {
+                        "type": "string",
+                        "example": "Carros"
+                    },
+                    "url_car": {
+                        "type": "string",
+                        "example": "https://example.com/creta-16a-action.jpg"
+                    },
+                    "price": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 115900
+                    },
+                    "color": {
+                        "type": "string",
+                        "example": "Branco"
+                    },
+                    "fuel": {
+                        "type": "string",
+                        "example": "Flex"
+                    },
+                    "photos": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": [
+                            "https://example.s3.amazonaws.com/creta1.jpeg",
+                            "https://example.s3.amazonaws.com/creta2.jpeg"
+                        ]
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Authentication via Bearer Token (Sanctum)",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Vehicles",
+            "description": "Endpoints for managing vehicles"
+        }
+    ]
+}
