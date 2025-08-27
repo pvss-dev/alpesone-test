@@ -243,22 +243,22 @@ O runner executa diretamente na EC2, eliminando necessidade de SSH:
 ```bash
 # Na EC2
 
-# Create a folder
+# Crie uma pasta
 $ mkdir actions-runner && cd actions-runner
 
-# Download the latest runner package
+# Baixe o pacote mais recente do Runner
 $ curl -o actions-runner-linux-x64-2.328.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.328.0/actions-runner-linux-x64-2.328.0.tar.gz
 
-# Optional: Validate the hash
+# Opcional: Validar o hash
 $ echo "01066fad3a2893e63e6ca880ae3a1fad5bf9329d60e77ee15f2b97c148c3cd4e  actions-runner-linux-x64-2.328.0.tar.gz" | shasum -a 256 -c
 
-# Extract the installer
+# Extraia o instalador
 $ tar xzf ./actions-runner-linux-x64-2.328.0.tar.gz
 
-# Create the runner and start the configuration experience
+# Crie o runner e inicie a experiência de configuração
 $ ./config.sh --url https://github.com/usuer/repo --token AGVCBVTVTN44TCFRG7XRNPDIV6FY45
 
-# Last step, run it!
+# Execute
 $ ./run.sh
 ```
 
@@ -300,7 +300,18 @@ cd alpesone-test
 
 # 2. Configurar ambiente
 cp .env.example .env
+
 # Editar .env com configurações locais
+nano .env
+
+# Exemplo de configurações para o banco de dados:
+DB_CONNECTION=mysql
+DB_HOST=alpesone-mysql
+DB_PORT=3306
+DB_DATABASE=my_database
+DB_USERNAME=user
+DB_PASSWORD=123
+DB_ROOT_PASSWORD=123
 
 # 3. Construir e iniciar containers
 docker compose up -d --build
