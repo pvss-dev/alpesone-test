@@ -305,6 +305,7 @@ cp .env.example .env
 nano .env
 
 # Exemplo de configurações para o banco de dados:
+DOCKERHUB_USERNAME=teste
 DB_CONNECTION=mysql
 DB_HOST=alpesone-mysql
 DB_PORT=3306
