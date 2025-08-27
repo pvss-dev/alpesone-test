@@ -11,7 +11,7 @@ use OpenApi\Attributes as OA;
         title: "Alpes One API - Technical Test"
     ),
     OA\Server(
-        url: 'http://localhost',
+        url: 'https://pvss-dev.ddns.net',
         description: 'Local Development Server'
     ),
     OA\SecurityScheme(
