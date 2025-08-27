@@ -50,9 +50,9 @@ services:
             - "443:443"
 
     # --- Database Service (MySQL) ---
-    mysql:
+    db-mysql:
         image: mysql:8.0
-        container_name: alpesone-mysql
+        container_name: db-mysql
         restart: unless-stopped
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}

@@ -117,9 +117,9 @@ jobs:
           APP_URL=${{ secrets.APP_URL }}
           LOG_CHANNEL=stack
           LOG_LEVEL=debug
-          DB_CONNECTION=${{ secrets.DB_CONNECTION }}
+          DB_CONNECTION=mysql
           DB_HOST=${{ secrets.DB_HOST }}
-          DB_PORT=${{ secrets.DB_PORT }}
+          DB_PORT=3306
           DB_DATABASE=${{ secrets.DB_DATABASE }}
           DB_USERNAME=${{ secrets.DB_USERNAME }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
