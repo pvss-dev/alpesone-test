@@ -103,6 +103,17 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
+      - name: Clean workspace
+        run: |
+          echo "Cleaning workspace permissions..."
+          if [ -d "${{ github.workspace }}/.docker/letsencrypt" ]; then
+            echo "Fixing Let's Encrypt permissions..."
+            sudo chown -R $USER:$USER ${{ github.workspace }}/.docker/letsencrypt || true
+            sudo chmod -R 755 ${{ github.workspace }}/.docker/letsencrypt || true
+          fi
+          sudo chown -R $USER:$USER ${{ github.workspace }} || true
+          sudo chmod -R 755 ${{ github.workspace }} || true
+
       - name: Checkout code
         uses: actions/checkout@v4
 
