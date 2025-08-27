@@ -20,7 +20,7 @@ services:
             - DB_PASSWORD=${DB_PASSWORD}
             - DB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
         depends_on:
-            mysql:
+            db-mysql:
                 condition: service_healthy
         networks:
             - alpesone_network
