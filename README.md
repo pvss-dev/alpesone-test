@@ -56,7 +56,7 @@ A aplicação segue a arquitetura MVC do Laravel com as seguintes camadas:
 │   └── seeders/                         # Seeds iniciais
 └── tests/
     ├── Feature/                         # Testes de integração
-    └── Unit/                           # Testes unitários
+    └── Unit/                            # Testes unitários
 ```
 
 ### Comando de Importação
@@ -143,13 +143,33 @@ services:
     db-mysql:      # Banco de dados MySQL 8.0
 ```
 
+### Fluxo de Requisições
+
+A arquitetura segue um fluxo otimizado para alta performance:
+
+```
+Cliente/Browser
+      ↓
+[Internet] → Cloudflare (DNS)
+      ↓
+[AWS EC2] → Nginx (Porta 443)
+      ↓
+├─ Requisições API → PHP-FPM (app:9000)
+      ↓
+   Laravel Framework
+      ↓
+   Controllers/Models
+      ↓
+   MySQL (db-mysql:3306)
+```
+
 ### Instruções de Configuração EC2
 
 #### 1. Criar Instância EC2
 
 1. Acesse AWS Console → EC2 → Launch Instance
 2. **Nome**: `alpesone-api`
-3. **AMI**: Ubuntu 22.04 LTS
+3. **AMI**: Ubuntu 24.04 LTS
 4. **Instance Type**: m7i-flex.large
 5. **Key Pair**: Criar nova chave `.pem`
 6. **Security Group**:
@@ -419,5 +439,5 @@ em: [test_collection.postman_collection.json](test_collection.postman_collection
 
 - **Swagger UI**: https://pvss-dev.ddns.net/api/documentation
 - **Collection Postman**: [test_collection.postman_collection.json](test_collection.postman_collection.json)
-- **Pipeline CI/CD**: `.github/workflows/deploy.yml`
-- **Docker Configuration**: `docker-compose.yml` e `Dockerfile`
+- **Pipeline CI/CD**: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
+- **Docker Configuration**: [docker-compose.yml](docker-compose.yml) e [Dockerfile](Dockerfile)
