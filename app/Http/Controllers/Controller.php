@@ -11,7 +11,7 @@ use OpenApi\Attributes as OA;
         title: "Alpes One API - Technical Test"
     ),
     OA\Server(
-        url: 'http://127.0.0.1:8000',
+        url: 'http://localhost',
         description: 'Local Development Server'
     ),
     OA\SecurityScheme(
