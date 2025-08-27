@@ -1,7 +1,7 @@
 services:
     # --- PHP Application Service ---
     app:
-        image: ${DOCKERHUB_USERNAME}/alpesone-test:${IMAGE_TAG:-latest}
+        image: ${DOCKERHUB_USERNAME}/alpesone-test:latest
         container_name: alpesone-app
         restart: unless-stopped
         environment:
