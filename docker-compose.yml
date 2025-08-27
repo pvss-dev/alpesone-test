@@ -6,8 +6,6 @@ services:
         image: ${DOCKERHUB_USERNAME}/alpesone-test:latest
         container_name: alpesone-app
         restart: unless-stopped
-        volumes:
-            - .:/var/www/html
         environment:
             - APP_NAME=Alpes One Test
             - APP_ENV=${APP_ENV}
