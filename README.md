@@ -399,3 +399,43 @@ Após completar todos os passos acima, a aplicação estará disponível nos seg
 - **API Principal:** http://localhost
 - **Documentação da API:** http://localhost/api/documentation
 
+## Testando a API
+
+Para testar a API primeiro precisa gerar um token de acesso.
+PAra isso, faça uma chamada POST para o endpoint `http://localhost/api/login` utiizando o Insomnia ou o Postman ou outro
+cliente
+REST, com os seguintes dados:
+
+```bash
+{
+"email": "test@example.com",
+"password": "123"
+}
+```
+
+# Configurando Cron para Laravel com Docker Compose
+
+Este guia explica como configurar o cron no servidor para rodar tarefas agendadas do Laravel (`schedule:run`) dentro de
+um container Docker gerenciado pelo **Docker Compose**.
+
+## 1. Configure o comando no Laravel Scheduler
+
+No arquivo `routes/console.php`, já está registrado o command para ser executado a cada hora:
+
+```php
+Schedule::command('app:import-vehicles')->hourly();
+```
+
+## 3. Configure o cron no servidor (host)
+
+Edite o crontab do usuário que executa o Docker:
+
+```bash
+crontab -e
+```
+
+Adicione a seguinte linha:
+
+```bash
+* * * * * cd /caminho/para/o/projeto && docker compose exec -T app php artisan schedule:run >> /dev/null 2>&1
+```
