@@ -18,8 +18,6 @@ RUN cp .env.example .env
 
 RUN php artisan key:generate
 
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
-
 # Production stage
 FROM php:8.4-fpm-alpine AS production
 
