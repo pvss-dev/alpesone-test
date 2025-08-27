@@ -1,50 +1,38 @@
-# --- Base PHP Image ---
-FROM php:8.4-fpm-alpine
+FROM php:8.4-fpm-alpine AS builder
 
-# --- Set Working Directory ---
 WORKDIR /var/www/html
 
-# --- Install System Dependencies ---
-RUN apk add --no-cache \
-        mysql-client \
-        curl \
-        zip \
-        unzip \
-        git \
-        nodejs \
-        npm
+RUN apk add --no-cache mysql-client curl zip unzip git
 
-# --- Install PHP Extensions ---
-RUN docker-php-ext-install -j$(nproc) \
-        pdo_mysql \
-        pcntl
+RUN docker-php-ext-install -j$(nproc) pdo_mysql pcntl
 
-# --- Install Composer ---
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-# --- Configure Composer ---
-ENV COMPOSER_ALLOW_SUPERUSER=1
+COPY composer.* ./
 
-# --- Copy application files ---
+RUN composer install --no-dev --optimize-autoloader --no-scripts
+
 COPY . .
 
-# --- Configure Git for safe directory ---
-RUN git config --global --add safe.directory /var/www/html
+RUN cp .env.example .env
 
-# --- Install PHP dependencies ---
-RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-interaction
+RUN php artisan key:generate
 
-# --- Generate optimized autoloader and discover packages for production ---
-RUN composer dump-autoload --optimize --classmap-authoritative \
-    && php artisan config:clear \
-    && php artisan route:clear \
-    && php artisan view:clear
+RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
 
-# --- Create storage directories and set permissions ---
-RUN mkdir -p storage/logs storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
-    && chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 storage bootstrap/cache
+# Production stage
+FROM php:8.4-fpm-alpine AS production
 
-# --- Health check simples ---
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD php artisan route:list > /dev/null || exit 1
+WORKDIR /var/www/html
+
+RUN apk add --no-cache mysql-client
+
+RUN docker-php-ext-install -j$(nproc) pdo_mysql pcntl
+
+COPY --from=builder /var/www/html .
+
+RUN rm -f .env
+
+RUN chown -R www-data:www-data /var/www/html
+
+USER www-data
