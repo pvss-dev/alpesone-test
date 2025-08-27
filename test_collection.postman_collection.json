@@ -1,0 +1,662 @@
+{
+	"info": {
+		"_postman_id": "08d0750d-b9e0-4a58-9485-afd94265112f",
+		"name": "Teste Técnico Alpes One",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47968059",
+		"_collection_link": "https://paulo-vitor-silva-soares-s-team.postman.co/workspace/58da1edc-0590-44d7-8497-6e87cb03e4b7/collection/47968059-08d0750d-b9e0-4a58-9485-afd94265112f?action=share&source=collection_link&creator=47968059"
+	},
+	"item": [
+		{
+			"name": "Get All Vehicles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/vehicles",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/vehicles",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"vehicles"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|PiONYBUzkjNEbkdJeFYUAnl96n2KMYhSDTk8i5nP8691f321"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/vehicles/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 2|PiONYBUzkjNEbkdJeFYUAnl96n2KMYhSDTk8i5nP8691f321"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/vehicles/3",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"3"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.29.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 27 Aug 2025 18:33:48 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "text/html; charset=UTF-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "Update Vehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/vehicles/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found / 404",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/vehicles/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "date",
+							"value": "Mon, 25 Aug 2025 19:43:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "text/html; charset=UTF-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/api/vehicles/1",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|Mlv45bXzilLwm0pgSdrz92CIkcalWpo9PvUgVi3Ma50c0eb0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/vehicles/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"1"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.29.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 27 Aug 2025 00:00:31 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "text/html; charset=UTF-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\": \"test@example.com\",\r\n\t\"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL1}}/api/login",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/login",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.29.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.4.11"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 27 Aug 2025 19:01:33 GMT"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"token\": \"2|sa3p32zkaYstg30WStDuKJ74eTL9q5cXitysfmDlc705c0aa\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Api Alpes One",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "insomnia/11.4.0"
+					}
+				],
+				"url": {
+					"raw": "https://hub.alpes.one/api/v1/integrator/export/1902",
+					"protocol": "https",
+					"host": [
+						"hub",
+						"alpes",
+						"one"
+					],
+					"path": [
+						"api",
+						"v1",
+						"integrator",
+						"export",
+						"1902"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "insomnia/11.4.0"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL2}}/api/v1/integrator/export/1902",
+							"host": [
+								"{{baseURL2}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"integrator",
+								"export",
+								"1902"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Mon, 25 Aug 2025 13:45:19 GMT"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "server",
+							"value": "nginx/1.24.0 (Ubuntu)"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "cache-control",
+							"value": "private, must-revalidate"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "expires",
+							"value": "0"
+						},
+						{
+							"key": "x-ratelimit-limit",
+							"value": "2"
+						},
+						{
+							"key": "x-ratelimit-remaining",
+							"value": "1"
+						},
+						{
+							"key": "access-control-allow-credentials",
+							"value": "true"
+						},
+						{
+							"key": "access-control-allow-origin: ",
+							"value": ""
+						},
+						{
+							"key": "amp-access-control-allow-source-origin: ",
+							"value": ""
+						},
+						{
+							"key": "access-control-expose-headers",
+							"value": "AMP-Redirect-To, AMP-Access-Control-Allow-Source-Origin"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=31536000; includeSubDomains"
+						}
+					],
+					"cookie": [],
+					"body": "[\n {\n  \"id\": 125306,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"CRETA 16A ACTION\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2025\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JCU2I93\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"24208\",\n  \"description\": \"*revisado\\r\\n*procedência\\r\\n*garantia \\r\\n\\r\\nPegamos trocas mediante avaliação\\r\\nvalor do anuncio para vendas avista !\\r\\npara trocas consultar condições\\r\\n\\r\\ncontato\\r\\nconsultor de vendas (watts zapp)\\r\\n\\r\\nFelipe  48- 99931-6648 /  Araranguá - SC \\r\\n\\r\\nJefersson  48- 8427-9763 / Criciuma - SC\\r\\n\\r\\nLucas - 48-48 9177-1511 /  Tubarão - SC\",\n  \"created\": \"2025-02-27 15:53:57\",\n  \"updated\": \"2025-06-16 16:27:36\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"hyundai-creta-2025-automatica-125306\",\n  \"old_price\": null,\n  \"price\": \"115900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/8c9/67c0b58c91b8f637846682.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/a90/67c0b5a9067ff421616405.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/94e/67c0b594eb2dc220649342.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/9c8/67c0b59c8c808439605857.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/a97/67c0b5a97c86e099489967.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/8c9/67c0b58c91908036396810.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/929/67c0b5929c885797708560.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/991/67c0b5991a933007662702.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/a2c/67c0b5a2cf5cf376755625.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/b08/67c0b5b088ac4879146658.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67c/0b5/b00/67c0b5b00423f765518077.jpeg\"\n  ]\n },\n {\n  \"id\": 126801,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"TRACKER\",\n  \"version\": \"TRACKER Premier 1.2 Turbo 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2021\",\n   \"build\": \"2021\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RDX6A56\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"61300\",\n  \"description\": \"*revisado\\r\\n*procedência\\r\\n*garantia \\r\\n\\r\\nPegamos trocas mediante avaliação\\r\\nvalor do anuncio para vendas avista !\\r\\npara trocas consultar condições\\r\\n\\r\\ncontato\\r\\nconsultor de vendas (watts zapp)\\r\\n\\r\\nFelipe  48 9931-6648 /  Ararangua-sc\\r\\n\\r\\njefersson  48- 8427-9763 / Criciuma-sc\\r\\n\\r\\nLucas - 48-48 9177-1511 /  Tubarão sc\",\n  \"created\": \"2025-03-25 11:32:31\",\n  \"updated\": \"2025-08-25 10:16:15\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"gm-chevrolet-tracker-2021-automatica-126801\",\n  \"old_price\": null,\n  \"price\": \"99900.00\",\n  \"color\": \"Cinza\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67e/2be/7bb/67e2be7bb8b4d490634316.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67e/2be/7bb/67e2be7bb719e528930106.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67e/2be/7cb/67e2be7cb5771928222866.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67e/2be/7ce/67e2be7ce45bd042315644.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/67e/2be/7db/67e2be7dbf05f801600349.jpeg\"\n  ]\n },\n {\n  \"id\": 128484,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20\",\n  \"version\": \"HB20 1.0M SENSE\",\n  \"year\": {\n   \"model\": \"2022\",\n   \"build\": \"2021\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JBE3G71\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"57150\",\n  \"description\": \"*revisado\\r\\n*procedência\\r\\n*garantia \\r\\n\\r\\nPegamos trocas mediante avaliação\\r\\nvalor do anuncio para vendas avista !\\r\\npara trocas consultar condições\\r\\n\\r\\ncontato\\r\\nconsultor de vendas (watts zapp)\\r\\n\\r\\nFelipe  48 9931-6648 /  Ararangua-sc\\r\\n\\r\\njefersson  48- 8427-9763 / Criciuma-sc\\r\\n\\r\\nLucas - 48-48 9177-1511 /  Tubarão sc\",\n  \"created\": \"2025-04-22 13:46:46\",\n  \"updated\": \"2025-06-16 16:27:26\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-hb20-2022-manual-128484\",\n  \"old_price\": null,\n  \"price\": \"64900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/4e8/6807c84e83e49541662900.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/3ee/6807c83ee7f0f168050548.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/3ee/6807c83ee8929944417224.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/438/6807c8438b678386004631.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/438/6807c8438dfc3341586824.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/48e/6807c848ef43f408562551.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/48e/6807c848ed7be423842592.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/4e7/6807c84e78455922864983.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/546/6807c8546cf26934739590.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/545/6807c85456df1511311427.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/680/7c8/599/6807c859977e6065517015.jpeg\"\n  ]\n },\n {\n  \"id\": 129307,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"Creta Comfort 1.0 TB 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2023\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JBW3F17\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"20941\",\n  \"description\": \"\",\n  \"created\": \"2025-05-08 09:28:18\",\n  \"updated\": \"2025-06-16 16:27:30\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-creta-2023-manual-129307\",\n  \"old_price\": null,\n  \"price\": \"118900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/578/681ca35780529344446420.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/579/681ca3579f6b6874438675.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/592/681ca3592d9e7866371562.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/59e/681ca359e2e68127096183.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5a9/681ca35a9e3e2386251730.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5b7/681ca35b730e2953747677.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5ca/681ca35ca4944091406194.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5d7/681ca35d7223e326546423.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5e9/681ca35e93cb6075477206.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/5f6/681ca35f67c38182060495.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca3/60b/681ca360b3642872945659.jpeg\"\n  ]\n },\n {\n  \"id\": 129310,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20\",\n  \"version\": \"HB20 10M EVOLUTION\",\n  \"year\": {\n   \"model\": \"2020\",\n   \"build\": \"2019\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RAD5C87\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"49513\",\n  \"description\": \"\",\n  \"created\": \"2025-05-08 09:44:36\",\n  \"updated\": \"2025-06-16 16:27:34\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-hb20-2020-manual-129310\",\n  \"old_price\": null,\n  \"price\": \"68900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3c2/681ca43c2329d025370863.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/39d/681ca439d5327557919354.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3af/681ca43af2cf1153164131.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3c2/681ca43c22f97654830460.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3d5/681ca43d52f0b015180649.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3f0/681ca43f0f2dd577162777.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/3f0/681ca43f07a89245788415.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/ca4/408/681ca4408bb13222177065.jpeg\"\n  ]\n },\n {\n  \"id\": 129575,\n  \"type\": \"carro\",\n  \"brand\": \"VW - Volkswagen\",\n  \"model\": \"TIGUAN\",\n  \"version\": \"TIGUAN Allspac R-Line 300 TSI 2.0\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JDD7I20\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"16804\",\n  \"description\": \"*revisado\\r\\n*procedência\\r\\n*garantia \\r\\n\\r\\nPegamos trocas mediante avaliação\\r\\nvalor do anuncio para vendas avista !\\r\\npara trocas consultar condições\\r\\n\\r\\ncontato\\r\\nconsultor de vendas (watts zapp)\\r\\n\\r\\nFelipe  48 9931-6648 /  Ararangua-sc\\r\\n\\r\\njefersson  48- 8427-9763 / Criciuma-sc\\r\\n\\r\\nLucas - 48-48 9177-1511 /  Tubarão sc\",\n  \"created\": \"2025-05-13 13:17:02\",\n  \"updated\": \"2025-06-16 16:27:26\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"vw-volkswagen-tiguan-2024-manual-129575\",\n  \"old_price\": null,\n  \"price\": \"244900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/73d/68237073d3e9d666606613.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/742/682370742f939149669402.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/759/682370759cf19293649620.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/75e/68237075e9d4f027074161.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/773/682370773514c372102091.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/784/682370784bcff359114620.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/798/6823707985d1b046983034.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/79d/68237079d7cee105890096.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7a9/6823707a9014e108115404.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7b7/6823707b7fbd9395353528.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7c4/6823707c4897c376221004.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7c5/6823707c5cacd023292530.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7d5/6823707d51391939457484.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/370/7da/6823707daf7fa495587672.jpeg\"\n  ]\n },\n {\n  \"id\": 129659,\n  \"type\": \"carro\",\n  \"brand\": \"Mitsubishi\",\n  \"model\": \"L200 TRITON\",\n  \"version\": \"L200 Triton Sport HPE-S 2.4 CD Dies. Aut\",\n  \"year\": {\n   \"model\": \"2023\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXV0A25\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"68899\",\n  \"description\": \"\",\n  \"created\": \"2025-05-14 17:51:03\",\n  \"updated\": \"2025-08-25 10:16:12\",\n  \"sold\": \"1\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"mitsubishi-l200-triton-2023-manual-129659\",\n  \"old_price\": null,\n  \"price\": \"219900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2c0/6825022c0d4dc677323165.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2ca/6825022ca3b40778159483.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2d2/6825022d2d83e793223205.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2dd/6825022ddedda630005396.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2ec/6825022ece3a0695104299.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2f4/6825022f4858f102199667.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/2fd/6825022fdae77956644510.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/303/682502303de6f222779044.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/30d/68250230dfe4c632339741.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/31c/68250231c2c04289882720.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/31d/68250231d0ef3991622938.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/32b/68250232b8a38316413909.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/32b/68250232b05b5966857807.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/682/502/33a/68250233ac9f8115200975.jpeg\"\n  ]\n },\n {\n  \"id\": 131977,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20S\",\n  \"version\": \"HB20S Platinum 1.0 TB Flex 12V Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXG6H42\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"10000\",\n  \"description\": \"\",\n  \"created\": \"2025-06-23 09:30:15\",\n  \"updated\": \"2025-06-24 03:03:33\",\n  \"sold\": \"0\",\n  \"category\": \"Sedan\",\n  \"url_car\": \"hyundai-hb20s-2024-manual-131977\",\n  \"old_price\": null,\n  \"price\": \"115000.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/163/685949163da4a534128068.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/948/fd8/685948fd8b7e9108106185.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/948/fe7/685948fe79bda640199511.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/046/685949046366b455026991.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/046/685949046d1e8114026462.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/08d/68594908d9bb9624905306.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/08d/68594908da39c642982793.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/0dd/6859490dd29fc721166500.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/0d2/6859490d2615c808936008.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/120/685949120470a454680264.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/949/12e/68594912e823e349957201.jpeg\"\n  ]\n },\n {\n  \"id\": 131980,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20\",\n  \"version\": \"HB20 Platinum 1.0 TB Flex 12V Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXG5G72\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"26450\",\n  \"description\": \"\",\n  \"created\": \"2025-06-23 09:46:06\",\n  \"updated\": \"2025-06-28 03:02:05\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-hb20-2024-automatica-131980\",\n  \"old_price\": null,\n  \"price\": \"107000.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/be6/68594cbe6c55e562144480.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/bed/68594cbed4d53607264385.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/c34/68594cc34eb64404473669.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/c34/68594cc34f79f649635908.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/c80/68594cc80fadf949264147.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/c81/68594cc81115b445959009.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/cca/68594cccacc2c332092979.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/cd3/68594ccd302d7291934587.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/d15/68594cd154db9620951196.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/d21/68594cd217dfb969011526.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/d5c/68594cd5c2033064654683.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/d72/68594cd72acd2369997759.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/685/94c/da2/68594cda2dc5e847354000.jpeg\"\n  ]\n },\n {\n  \"id\": 132731,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"ONIX\",\n  \"version\": \"ONIX HATCH ACTIV 1.4 8V Flex 5P Aut.\",\n  \"year\": {\n   \"model\": \"2019\",\n   \"build\": \"2018\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"IYQ2B48\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"51810\",\n  \"description\": \"\",\n  \"created\": \"2025-07-02 11:25:31\",\n  \"updated\": \"2025-07-30 03:03:44\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"gm-chevrolet-onix-2019-automatica-132731\",\n  \"old_price\": null,\n  \"price\": \"74900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/fe6/686541fe6a0ce430582184.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/4b4/6865414b48fbd722049314.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/4cb/6865414cb40ed807666390.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/4e2/6865414e2bed9158564642.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/4fc/6865414fc5557585817405.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/511/68654151151cd077556457.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/51e/68654151e2e52856657066.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/541/fe6/686541fe6982a777219041.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/542/037/6865420372dcd020803337.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/542/03a/68654203a0721531414304.jpg\"\n  ]\n },\n {\n  \"id\": 132821,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20S\",\n  \"version\": \"HB20S 10 TA PLATIN\",\n  \"year\": {\n   \"model\": \"2022\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RLL2H42\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"68000\",\n  \"description\": \"\",\n  \"created\": \"2025-07-03 16:29:28\",\n  \"updated\": \"2025-07-08 17:03:03\",\n  \"sold\": \"0\",\n  \"category\": \"Sedan\",\n  \"url_car\": \"hyundai-hb20s-2022-automatica-132821\",\n  \"old_price\": null,\n  \"price\": \"86990.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/11c/6866da11c3f00308224553.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/11c/6866da11ca4e6650866922.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/129/6866da129ca8b503639195.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/12a/6866da12af5f4860357175.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/134/6866da134a84f592801032.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/137/6866da13798d3568520685.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/140/6866da1409d38023215054.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6da/143/6866da1430d1b746081777.jpeg\"\n  ]\n },\n {\n  \"id\": 132825,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"ONIX\",\n  \"version\": \"ONIX HATCH PREM. 1.0 12V TB Flex 5p Aut.\",\n  \"year\": {\n   \"model\": \"2023\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXQ9D90\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"23386\",\n  \"description\": \"\",\n  \"created\": \"2025-07-03 16:49:22\",\n  \"updated\": \"2025-07-19 03:02:25\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"gm-chevrolet-onix-2023-automatica-132825\",\n  \"old_price\": null,\n  \"price\": \"89990.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/994/6866de994f540639725816.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/974/6866de974d336219828690.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/975/6866de975a133877343552.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/981/6866de981f8da210874516.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/982/6866de98272ee066913006.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/994/6866de9948bb0842744994.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/98a/6866de98ac5a2036208362.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/9a2/6866de9a26db5559151000.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/9a2/6866de9a24fff586337708.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/9ab/6866de9ab252a930741689.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/6de/9ae/6866de9ae632a126261389.jpeg\"\n  ]\n },\n {\n  \"id\": 133030,\n  \"type\": \"carro\",\n  \"brand\": \"Mitsubishi\",\n  \"model\": \"PAJERO SPORT\",\n  \"version\": \"PAJERO SPORT HPE S\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXN2J53\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"8900\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 09:13:07\",\n  \"updated\": \"2025-07-10 03:02:25\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"mitsubishi-pajero-sport-2025-manual-133030\",\n  \"old_price\": null,\n  \"price\": \"359990.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3d5/686d0b3d529fc259321266.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3c4/686d0b3c4a69d912027839.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3cd/686d0b3cd7bb4726839617.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3d6/686d0b3d69c5f286625496.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3e2/686d0b3e2d15e965365145.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3e0/686d0b3e0a0f6025723004.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3e9/686d0b3e9109a253118250.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3eb/686d0b3eb2666236078025.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3f4/686d0b3f4d96d050953251.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3f5/686d0b3f5a440807497427.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d0b/3fd/686d0b3fd042c683142891.jpeg\"\n  ]\n },\n {\n  \"id\": 133032,\n  \"type\": \"carro\",\n  \"brand\": \"Jeep\",\n  \"model\": \"RENEGADE\",\n  \"version\": \"RENEGADE LONG T270\",\n  \"year\": {\n   \"model\": \"2016\",\n   \"build\": \"2015\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"QHX7228\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"52600\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 09:57:34\",\n  \"updated\": \"2025-07-09 03:03:37\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"jeep-renegade-2016-automatica-133032\",\n  \"old_price\": null,\n  \"price\": \"76900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/ba5/686d15ba56b5b454573536.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/ba5/686d15ba52560711658723.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bae/686d15bae9942039171829.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bb0/686d15bb0241e102940453.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bb7/686d15bb7c575699320796.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bb9/686d15bb98f7e113520962.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bc0/686d15bc0a277006318885.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bc3/686d15bc3ce91647111948.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bcb/686d15bcbb655932103696.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bcc/686d15bcccf8d912496925.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bd5/686d15bd5ed50574671390.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bd6/686d15bd6e8d1084304973.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/bde/686d15bde4175715964487.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d15/be0/686d15be05438867798032.jpeg\"\n  ]\n },\n {\n  \"id\": 133033,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20\",\n  \"version\": \"HB20 10M LIMITED\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYS8J73\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"18970\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 10:04:29\",\n  \"updated\": \"2025-07-09 03:03:50\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-hb20-2025-manual-133033\",\n  \"old_price\": null,\n  \"price\": \"84900.00\",\n  \"color\": \"Preto\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/8aa/686d178aaf710181515422.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/8ad/686d178ad744e671016501.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/8f5/686d178f57e56751124794.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/8f5/686d178f56c5d021347775.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/93e/686d1793eb550749845949.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/93e/686d1793e367d439714724.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/989/686d179892158888069517.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/989/686d17989312f149796860.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/9d1/686d179d19c0f212843965.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/9d2/686d179d2e9f0472209612.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/a17/686d17a17a060734040815.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d17/a19/686d17a19c562159440069.jpeg\"\n  ]\n },\n {\n  \"id\": 133035,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20S\",\n  \"version\": \"HB20S Diamond Plus 1.0 TB Flex 12V Aut.\",\n  \"year\": {\n   \"model\": \"2022\",\n   \"build\": \"2021\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXQ3C77\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"60750\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 10:09:25\",\n  \"updated\": \"2025-07-09 03:03:59\",\n  \"sold\": \"0\",\n  \"category\": \"Sedan\",\n  \"url_car\": \"hyundai-hb20s-2022-automatica-133035\",\n  \"old_price\": null,\n  \"price\": \"88900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/1bf/686d1a1bf3344715196150.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/0de/686d1a0de8917218202415.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/0d0/686d1a0d02560768794071.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/130/686d1a130de41465661866.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/138/686d1a1387054834334630.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/176/686d1a1769d85238321975.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1a/183/686d1a18314e6423139406.jpg\"\n  ]\n },\n {\n  \"id\": 133037,\n  \"type\": \"carro\",\n  \"brand\": \"Mitsubishi\",\n  \"model\": \"ASX\",\n  \"version\": \"ASX 2.0 CVT\",\n  \"year\": {\n   \"model\": \"2019\",\n   \"build\": \"2018\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JCC5B67\",\n  \"chassi\": \"\",\n  \"transmission\": \"CVT\",\n  \"km\": \"32592\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 10:23:04\",\n  \"updated\": \"2025-07-09 03:03:46\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"mitsubishi-asx-2019-cvt-133037\",\n  \"old_price\": null,\n  \"price\": \"99900.00\",\n  \"color\": \"Azul\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/4da/686d1c4da479a754832822.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/4da/686d1c4da3ffa669581315.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/528/686d1c528b013002535767.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/52c/686d1c52c42a7260160209.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/574/686d1c574b3d6271864614.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/578/686d1c5788012227834111.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/5bc/686d1c5bcf4e4431287548.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/5c5/686d1c5c5771c476708428.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/604/686d1c604ea87637273871.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/60f/686d1c60f01fd378270612.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d1c/64f/686d1c64f0749634612090.jpg\"\n  ]\n },\n {\n  \"id\": 133040,\n  \"type\": \"carro\",\n  \"brand\": \"Toyota\",\n  \"model\": \"COROLLA\",\n  \"version\": \"COROLLA XEI 20 FLEX\",\n  \"year\": {\n   \"model\": \"2020\",\n   \"build\": \"2019\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RAG4A40\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"73200\",\n  \"description\": \"\",\n  \"created\": \"2025-07-08 10:57:36\",\n  \"updated\": \"2025-08-14 03:03:24\",\n  \"sold\": \"0\",\n  \"category\": \"Sedan\",\n  \"url_car\": \"toyota-corolla-2020-automatica-133040\",\n  \"old_price\": null,\n  \"price\": \"122900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c7e/686d23c7ecc5e634178512.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/bf2/686d23bf215ac381388712.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/bdb/686d23bdb0d50478075926.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/bfb/686d23bfb86c4376025005.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c37/686d23c376791900332833.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c2d/686d23c2d3005685272208.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c3b/686d23c3b47cc829702283.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c50/686d23c5041bc157577278.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d23/c4d/686d23c4d4e08968266336.jpeg\"\n  ]\n },\n {\n  \"id\": 133043,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"TRACKER\",\n  \"version\": \"TRACKER LTZ 1.0 Turbo 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXI1H87\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"7981\",\n  \"description\": \"Abaixo da Fipe.\\r\\nRepasse de Concessionária.\",\n  \"created\": \"2025-07-08 11:20:48\",\n  \"updated\": \"2025-07-22 03:02:10\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"gm-chevrolet-tracker-2025-automatica-133043\",\n  \"old_price\": null,\n  \"price\": \"129900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/392/686d29392e023234351944.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/377/686d29377baf7723658426.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/384/686d293842e85763668667.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/390/686d2939089f4058802965.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/39e/686d2939e6a48995227860.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3a4/686d293a4e2e2158646177.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3ae/686d293ae4cea239556669.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3b5/686d293b58140190588201.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3bd/686d293bde9d9694293939.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3c6/686d293c6fdb3738622738.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/686/d29/3ce/686d293ce7e9d089997832.jpeg\"\n  ]\n },\n {\n  \"id\": 133729,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"TRACKER\",\n  \"version\": \"TRACKER Premier 1.2 Turbo 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"JDE9I67\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"7605\",\n  \"description\": \"Abaixo da Fipe.\\r\\nRepasse de Concessionária\",\n  \"created\": \"2025-07-21 09:51:39\",\n  \"updated\": \"2025-08-19 08:14:09\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"gm-chevrolet-tracker-2025-manual-133729\",\n  \"old_price\": null,\n  \"price\": \"134900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e39/6fe/687e396fe5b35790070393.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e39/755/687e39755b15d352108498.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e38/385/687e3838592c9134455355.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e38/3b1/687e383b13ffe622777287.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e38/42a/687e3842afc03779880894.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e38/587/687e385873b53230053440.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/687/e38/544/687e385448771245403642.jpeg\"\n  ]\n },\n {\n  \"id\": 133898,\n  \"type\": \"carro\",\n  \"brand\": \"VW - Volkswagen\",\n  \"model\": \"Fox\",\n  \"version\": \"Fox TRACK 1.0 Flex 12V 5p\",\n  \"year\": {\n   \"model\": \"2018\",\n   \"build\": \"2017\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"QIN6488\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"32780\",\n  \"description\": \"\",\n  \"created\": \"2025-07-23 15:14:51\",\n  \"updated\": \"2025-08-15 03:02:29\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"vw-volkswagen-fox-2018-manual-133898\",\n  \"old_price\": null,\n  \"price\": \"59900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/8ee/6881268eeb668636587142.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/8d6/6881268d689d7590209665.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/8d6/6881268d6876b157560748.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/8e8/6881268e8f3a6371307697.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/901/68812690155c9833865484.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/906/68812690621f4745774465.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/924/688126924ad8d898558326.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/126/938/6881269389f10854480880.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/689/e20/9a4/689e209a47476012909977.jpg\"\n  ]\n },\n {\n  \"id\": 133899,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"MONTANA\",\n  \"version\": \"MONTANA PREMIER 1.2 Turbo Flex 12V Aut.\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXN0F50\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"13441\",\n  \"description\": \"\",\n  \"created\": \"2025-07-23 15:23:25\",\n  \"updated\": \"2025-07-24 03:03:17\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"gm-chevrolet-montana-2025-automatica-133899\",\n  \"old_price\": null,\n  \"price\": \"129900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/981/688128981f654776303713.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/981/6881289814393440026577.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/98d/68812898d888c407620416.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/98e/68812898eb62f410877953.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/99a/68812899a3e96500961260.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/99b/68812899b14f8854450062.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/9a7/6881289a740d0887305054.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/9a7/6881289a7f9af500293411.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/9b2/6881289b2293d230768345.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/9b2/6881289b2e15b169386515.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/128/9c1/6881289c1bfb2756489890.jpg\"\n  ]\n },\n {\n  \"id\": 133900,\n  \"type\": \"carro\",\n  \"brand\": \"Mitsubishi\",\n  \"model\": \"ECLIPSE CROSS\",\n  \"version\": \"Eclipse Cross HPE-S 1.5 AWC 165cv Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYJ7F66\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"32894\",\n  \"description\": \"\",\n  \"created\": \"2025-07-23 15:32:44\",\n  \"updated\": \"2025-08-12 16:40:12\",\n  \"sold\": \"1\",\n  \"category\": \"SUV\",\n  \"url_car\": \"mitsubishi-eclipse-cross-2024-automatica-133900\",\n  \"old_price\": null,\n  \"price\": \"179900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8eb/68812a8eb0140080722255.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8b3/68812a8b33574643286875.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8b4/68812a8b4df13732568518.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8c7/68812a8c75b20655636170.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8c7/68812a8c7db6e903558479.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8d6/68812a8d6f639145483805.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8d8/68812a8d848e5504151190.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12a/8e6/68812a8e661a2304303775.jpg\"\n  ]\n },\n {\n  \"id\": 133901,\n  \"type\": \"carro\",\n  \"brand\": \"Honda\",\n  \"model\": \"FIT\",\n  \"version\": \"FIT LX CVT\",\n  \"year\": {\n   \"model\": \"2015\",\n   \"build\": \"2014\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"MFU5027\",\n  \"chassi\": \"\",\n  \"transmission\": \"CVT\",\n  \"km\": \"80000\",\n  \"description\": \"\",\n  \"created\": \"2025-07-23 15:42:16\",\n  \"updated\": \"2025-07-24 03:03:09\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"honda-fit-2015-cvt-133901\",\n  \"old_price\": null,\n  \"price\": \"64000.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/da8/68812cda8efb2585690144.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/da8/68812cda8ed24507783072.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/db6/68812cdb696f5839926065.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/db6/68812cdb6a193500189905.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/dc1/68812cdc193b0125833768.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/dc1/68812cdc16eea493539284.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/12c/dcb/68812cdcb4c62984925085.jpg\"\n  ]\n },\n {\n  \"id\": 133902,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"CRETA 16A ACTION\",\n  \"year\": {\n   \"model\": \"2021\",\n   \"build\": \"2021\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RLH2B36\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"76651\",\n  \"description\": \"\",\n  \"created\": \"2025-07-23 16:19:41\",\n  \"updated\": \"2025-07-24 03:03:13\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-creta-2021-automatica-133902\",\n  \"old_price\": null,\n  \"price\": \"94900.00\",\n  \"color\": \"Cinza\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/135/b13/688135b136954682313791.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f15/688134f159c85410853481.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f15/688134f15bc63099736099.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f27/688134f277af3497787580.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f29/688134f295b8a077952151.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f39/688134f394a8f188626308.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/134/f3a/688134f3ab8f9012066178.jpg\"\n  ]\n },\n {\n  \"id\": 134285,\n  \"type\": \"carro\",\n  \"brand\": \"GM - Chevrolet\",\n  \"model\": \"ONIX\",\n  \"version\": \"ONIX HATCH LT 1.0 12V Flex 5p Mec.\",\n  \"year\": {\n   \"model\": \"2023\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXU4J90\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"36994\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 15:34:47\",\n  \"updated\": \"2025-07-30 03:03:30\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"gm-chevrolet-onix-2023-manual-134285\",\n  \"old_price\": null,\n  \"price\": \"73900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/649/688913649f963181972891.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/639/688913639e677186211028.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/618/688913618d57c815034856.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/61a/68891361ae21e451882293.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/626/6889136263838525480267.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/62a/68891362a133c461270788.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/630/6889136307c69231557116.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/635/6889136355f46401032480.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/63e/68891363e68dd675261806.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/64b/68891364b46e1316030308.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/913/659/6889136595f88512560746.jpg\"\n  ]\n },\n {\n  \"id\": 134286,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"CRETA 16A ATTITUDE\",\n  \"year\": {\n   \"model\": \"2018\",\n   \"build\": \"2018\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"QIQ3073\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"67500\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 15:40:48\",\n  \"updated\": \"2025-07-30 03:03:35\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"hyundai-creta-2018-automatica-134286\",\n  \"old_price\": null,\n  \"price\": \"82900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/da3/688915da3f64e152015007.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/da5/688915da5cdfe079101317.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/de9/688915de9a0e0489346723.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/dec/688915dec8b76705031471.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/e37/688915e37f40d345115105.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/e38/688915e38adfb013355472.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/e88/688915e888110365286047.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/915/e8b/688915e8b296d394208857.jpg\"\n  ]\n },\n {\n  \"id\": 134287,\n  \"type\": \"carro\",\n  \"brand\": \"Fiat\",\n  \"model\": \"CRONOS\",\n  \"version\": \"CRONOS DRIVE 1.3 8V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYO5C57\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"8344\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 15:47:37\",\n  \"updated\": \"2025-07-30 03:03:42\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"fiat-cronos-2024-automatica-134287\",\n  \"old_price\": null,\n  \"price\": \"85900.00\",\n  \"color\": \"Vermelho\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/3fc/6889173fce5fd826126207.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/3fe/6889173fef8c9931732259.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/40b/68891740bcd21711617356.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/40c/68891740c4f3f228420113.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/41d/68891741d5357890517736.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/41d/68891741d2049330639390.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/42b/68891742b8a67304125892.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/42c/68891742c7201849865731.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/439/688917439d6c7261700408.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/439/688917439fc47622731575.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/445/68891744520b4867690951.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/445/6889174458bd4807868509.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/917/44d/68891744d6538501829823.jpg\"\n  ]\n },\n {\n  \"id\": 134289,\n  \"type\": \"carro\",\n  \"brand\": \"BYD\",\n  \"model\": \"Dolphin\",\n  \"version\": \"Dolphin EV (Elétrico)\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYG7D45\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"26412\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 15:59:39\",\n  \"updated\": \"2025-08-05 09:35:13\",\n  \"sold\": \"1\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"byd-dolphin-2024-automatica-134289\",\n  \"old_price\": null,\n  \"price\": \"124990.00\",\n  \"color\": \"Cinza\",\n  \"fuel\": \"Elétrico\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a5d/688918a5d3b3b557110646.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a2b/688918a2b273e567885545.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a2b/688918a2b2891433393816.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a37/688918a372192865551006.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a38/688918a38c7b0899288068.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a41/688918a4163ae059765047.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a47/688918a4729e4628269223.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a4a/688918a4ae604742470363.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a53/688918a53d829364072829.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a54/688918a54e22a290265573.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a60/688918a60be34370965945.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a67/688918a676fa5013575266.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/918/a6d/688918a6d7cc1755738798.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91a/166/68891a166adc4724382711.jpg\"\n  ]\n },\n {\n  \"id\": 134293,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"Creta Platinum 1.0 TB 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYI9I95\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"33500\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 16:11:57\",\n  \"updated\": \"2025-08-15 03:02:34\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"hyundai-creta-2024-automatica-134293\",\n  \"old_price\": null,\n  \"price\": \"124990.00\",\n  \"color\": \"Azul\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f64/68891cf644c1b943218813.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f13/68891cf13bac6813403040.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f13/68891cf13badb808535434.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f1e/68891cf1e795d401700223.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f20/68891cf20e1b6194346432.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f28/68891cf286b01018513418.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f29/68891cf297e59360586633.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f31/68891cf31bee1840055034.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f33/68891cf337c36187524382.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f3c/68891cf3ce221930717883.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f3c/68891cf3c388d680076137.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f47/68891cf471ae3470522437.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f47/68891cf478aa7396047184.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f51/68891cf5108e0417796754.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f54/68891cf5400be879011130.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91c/f5c/68891cf5c02f1017815622.jpg\"\n  ]\n },\n {\n  \"id\": 134294,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"Creta Platinum 1.0 TB 12V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2022\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RLM 7A63\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"59001\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 16:20:07\",\n  \"updated\": \"2025-07-30 03:03:44\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"hyundai-creta-2022-automatica-134294\",\n  \"old_price\": null,\n  \"price\": \"126900.00\",\n  \"color\": \"Prata\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/db2/68891edb200e9160568517.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/db1/68891edb194fc702108576.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/dbe/68891edbee07a852571593.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/dbb/68891edbb3b17011001008.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/dd1/68891edd17bc3396467023.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/dd4/68891edd48247811745539.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/de1/68891ede1b6c4978620755.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/de2/68891ede267d2954863477.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/91e/dec/68891edec4882323842959.jpg\"\n  ]\n },\n {\n  \"id\": 134297,\n  \"type\": \"carro\",\n  \"brand\": \"Land Rover\",\n  \"model\": \"DEFENDER\",\n  \"version\": \"Defender 90 TDI SW Diesel\",\n  \"year\": {\n   \"model\": \"2002\",\n   \"build\": \"2002\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"MMM4570\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"289300\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 16:30:42\",\n  \"updated\": \"2025-08-15 03:02:32\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"land-rover-defender-2002-manual-134297\",\n  \"old_price\": null,\n  \"price\": \"199900.00\",\n  \"color\": \"Verde\",\n  \"fuel\": \"Diesel\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/35f/68892135f0107888492845.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/35d/68892135deb58478647818.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/36d/68892136d0539596766116.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/370/688921370583f392999781.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/37e/68892137e8984282381702.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/383/688921383ac31461031993.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/389/6889213893354747335901.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/394/6889213943673765267386.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/399/6889213999f8e648248886.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/3a0/6889213a0c1cf038083412.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/3a9/6889213a9ddc6298380952.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/3a9/6889213a9d0ef391708179.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/3b4/6889213b4aab4655772919.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/921/3b4/6889213b4330a995168972.jpg\"\n  ]\n },\n {\n  \"id\": 134301,\n  \"type\": \"carro\",\n  \"brand\": \"VW - Volkswagen\",\n  \"model\": \"AMAROK\",\n  \"version\": \"AMAROK Highline CD 3.0 4x4 TB Dies. Aut.\",\n  \"year\": {\n   \"model\": \"2025\",\n   \"build\": \"2024\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"SXH5E69\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"12427\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 16:56:53\",\n  \"updated\": \"2025-07-30 03:03:36\",\n  \"sold\": \"0\",\n  \"category\": \"Picape\",\n  \"url_car\": \"vw-volkswagen-amarok-2025-automatica-134301\",\n  \"old_price\": null,\n  \"price\": \"289000.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/80e/68892780e1076120598970.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/80e/68892780e0df7675329949.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/81b/68892781bf311073737128.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/81e/68892781ef6ff036497598.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/82b/68892782bb03a545562843.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/82d/68892782d2b38481827291.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/835/68892783569ae611497210.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/83a/68892783a4b5c295233732.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/841/688927841f706344026594.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/927/849/688927849d703398506124.jpg\"\n  ]\n },\n {\n  \"id\": 134305,\n  \"type\": \"carro\",\n  \"brand\": \"Land Rover\",\n  \"model\": \"DISCOVERY\",\n  \"version\": \"Discovery ES 3.9 V8\",\n  \"year\": {\n   \"model\": \"2022\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXP7F71\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"58000\",\n  \"description\": \"\",\n  \"created\": \"2025-07-29 17:02:38\",\n  \"updated\": \"2025-08-15 03:02:33\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"land-rover-discovery-2022-manual-134305\",\n  \"old_price\": null,\n  \"price\": \"239900.00\",\n  \"color\": \"Preto\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d71/688928d716196987409568.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d71/688928d7160cd188368528.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d7a/688928d7a2e91449804759.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d7c/688928d7c6f0c698129841.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d83/688928d83f0e2021402409.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d85/688928d85878b192259121.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/928/d8e/688928d8e8b4c627048947.jpg\"\n  ]\n },\n {\n  \"id\": 134476,\n  \"type\": \"carro\",\n  \"brand\": \"Renault\",\n  \"model\": \"CAPTUR\",\n  \"version\": \"CAPTUR Intense 1.6 16V Flex 5p Aut.\",\n  \"year\": {\n   \"model\": \"2019\",\n   \"build\": \"2018\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"QIX6383\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"33913\",\n  \"description\": \"\",\n  \"created\": \"2025-07-31 14:46:31\",\n  \"updated\": \"2025-08-12 16:37:52\",\n  \"sold\": \"1\",\n  \"category\": \"SUV\",\n  \"url_car\": \"renault-captur-2019-manual-134476\",\n  \"old_price\": null,\n  \"price\": \"76900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ef0/688babef084b6316663653.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/eca/688babeca1442815529425.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ecb/688babecba5b7686782300.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ed8/688babed824f1285588964.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ed9/688babed993ba842486809.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ee4/688babee4d940967985541.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ee6/688babee68b19251592788.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/ef1/688babef1441c392762489.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/efa/688babefac7f9832972681.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/eff/688babeff14ec142956880.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bab/f0a/688babf0a6a05355697042.jpg\"\n  ]\n },\n {\n  \"id\": 134478,\n  \"type\": \"carro\",\n  \"brand\": \"Nissan\",\n  \"model\": \"VERSA\",\n  \"version\": \"VERSA Sense 1.6 16V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYG6H26\",\n  \"chassi\": \"\",\n  \"transmission\": \"CVT\",\n  \"km\": \"44492\",\n  \"description\": \"\",\n  \"created\": \"2025-07-31 15:14:52\",\n  \"updated\": \"2025-08-01 03:04:07\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"nissan-versa-2024-cvt-134478\",\n  \"old_price\": null,\n  \"price\": \"93900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/77e/688bb277e2a0b791563431.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/785/688bb278525be858890367.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/78b/688bb278b0b99832553093.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/78f/688bb278f093d208320041.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/79c/688bb279c47bc605801347.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/79e/688bb279e8023232818169.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7ab/688bb27abec35117282303.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7ac/688bb27acff61331078905.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7ba/688bb27babc0d173031498.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7bc/688bb27bc4c57042058535.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7c6/688bb27c6a9d1480006340.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb2/7c9/688bb27c908a6038109279.jpg\"\n  ]\n },\n {\n  \"id\": 134479,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"CRETA\",\n  \"version\": \"Creta Pulse 1.6 16V Flex Aut.\",\n  \"year\": {\n   \"model\": \"2017\",\n   \"build\": \"2017\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"QIQ1072\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"52814\",\n  \"description\": \"\",\n  \"created\": \"2025-07-31 15:20:50\",\n  \"updated\": \"2025-08-01 03:04:08\",\n  \"sold\": \"0\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-creta-2017-automatica-134479\",\n  \"old_price\": null,\n  \"price\": \"85900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/e8a/688bb3e8aa837811751357.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/e84/688bb3e844b3d306695458.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/e90/688bb3e9053e4183779815.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/e96/688bb3e962f9e823723907.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/e99/688bb3e99e2d3363857764.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/ea1/688bb3ea197a6282211620.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/ea4/688bb3ea49cb0364737738.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/eab/688bb3eab1a41133344744.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/ead/688bb3eadecbb611001482.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/eb7/688bb3eb7b2b5818390267.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb3/eb8/688bb3eb8044e087588101.jpg\"\n  ]\n },\n {\n  \"id\": 134480,\n  \"type\": \"carro\",\n  \"brand\": \"Jeep\",\n  \"model\": \"RENEGADE\",\n  \"version\": \"Renegade S T270 1.3 TB 4x4 Flex Aut.\",\n  \"year\": {\n   \"model\": \"2024\",\n   \"build\": \"2023\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RYK2G08\",\n  \"chassi\": \"\",\n  \"transmission\": \"Automática\",\n  \"km\": \"17474\",\n  \"description\": \"\",\n  \"created\": \"2025-07-31 15:26:46\",\n  \"updated\": \"2025-08-01 03:04:09\",\n  \"sold\": \"0\",\n  \"category\": \"SUV\",\n  \"url_car\": \"jeep-renegade-2024-automatica-134480\",\n  \"old_price\": null,\n  \"price\": \"134900.00\",\n  \"color\": \"Cinza\",\n  \"fuel\": \"Flex\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/60a/688bb560aed08016273891.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/5e7/688bb55e76718530666217.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/5e9/688bb55e9d956355555961.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/5f7/688bb55f7bd7e206336419.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/5f8/688bb55f8c4b8134130086.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/606/688bb5606da1c977708617.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/617/688bb56170e8a035052425.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/61a/688bb561aefca570697817.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/625/688bb56258696499661596.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/628/688bb56284ec7359942632.jpg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/688/bb5/633/688bb5633e64e976494957.jpg\"\n  ]\n },\n {\n  \"id\": 129314,\n  \"type\": \"carro\",\n  \"brand\": \"Hyundai\",\n  \"model\": \"HB20S\",\n  \"version\": \"HB20S Limited 1.0  Flex 12V Mec.\",\n  \"year\": {\n   \"model\": \"2023\",\n   \"build\": \"2022\"\n  },\n  \"optionals\": [],\n  \"doors\": \"5\",\n  \"board\": \"RXQ3A86\",\n  \"chassi\": \"\",\n  \"transmission\": \"Manual\",\n  \"km\": \"45855\",\n  \"description\": \"\",\n  \"created\": \"2025-05-08 10:01:03\",\n  \"updated\": \"2025-08-04 15:56:41\",\n  \"sold\": \"1\",\n  \"category\": \"Hatchback\",\n  \"url_car\": \"hyundai-hb20s-2023-manual-129314\",\n  \"old_price\": null,\n  \"price\": \"79900.00\",\n  \"color\": \"Branco\",\n  \"fuel\": \"Gasolina\",\n  \"fotos\": [\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d0c/681caad0c416f703615323.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d15/681caad15786e234208066.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d18/681caad18096a434879827.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d22/681caad220910351642190.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d24/681caad24283c714889029.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d2b/681caad2b6aec463455194.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d34/681caad34850b077740851.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d36/681caad364da5713154415.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d41/681caad418dc6809946706.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d41/681caad417d3f197893233.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d49/681caad49d5be513418821.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d53/681caad53780b062811497.jpeg\",\n   \"https://alpes-hub.s3.amazonaws.com/uploads/public/681/caa/d5a/681caad5ae470783324374.jpeg\"\n  ]\n }\n]"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "https://pvss-dev.ddns.net"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
