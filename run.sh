@@ -49,14 +49,14 @@ echo "${COLOR_GREEN}Ambiente preparado com sucesso!${COLOR_RESET}"
 
 # --- 2. BUILD DAS IMAGENS DOCKER ---
 echo "\n${COLOR_YELLOW}PASSO 2: Construindo as imagens Docker (Build)...${COLOR_RESET}"
-docker compose build --no-cache
+docker compose -f docker-compose.local.yml build --no-cache
 
 echo "${COLOR_GREEN}Imagens construídas com sucesso!${COLOR_RESET}"
 
 # --- 3. SUBINDO OS CONTÊINERES ---
 echo "\n${COLOR_YELLOW}PASSO 3: Subindo os contêineres (Deploy)...${COLOR_RESET}"
-docker compose down
-docker compose up -d
+docker compose -f docker-compose.local.yml down
+docker compose -f docker-compose.local.yml up -d
 
 echo "${COLOR_GREEN}Contêineres iniciados com sucesso!${COLOR_RESET}"
 
@@ -66,7 +66,7 @@ echo "\n${COLOR_YELLOW}PASSO 4: Executando comandos pós-deploy...${COLOR_RESET}
 echo "Aguardando a aplicação ficar saudável (até 60s)..."
 timeout 60s bash -c 'until docker compose ps | grep alpesone-app | grep -q healthy; do sleep 2; done' || true
 
-if ! docker compose ps | grep alpesone-app | grep -q healthy; then
+if ! docker compose -f docker-compose.local.yml ps | grep alpesone-app | grep -q healthy; then
     echo "Erro: A aplicação não ficou saudável a tempo. Verifique os logs com 'docker compose logs app'."
     exit 1
 fi
@@ -83,7 +83,7 @@ COMMANDS=(
 
 for cmd in "${COMMANDS[@]}"; do
     echo "Executando: docker compose exec -T app ${cmd}"
-    docker compose exec -T app ${cmd}
+    docker compose -f docker-compose.local.yml exec -T app ${cmd}
 done
 
 echo "${COLOR_GREEN}Comandos pós-deploy executados com sucesso!${COLOR_RESET}"
