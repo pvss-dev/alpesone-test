@@ -122,7 +122,7 @@ Authorization: Bearer {token}
 A aplicação está hospedada em uma instância EC2 com as seguintes configurações:
 
 - **Tipo**: m7i-flex.large
-- **Sistema**: Ubuntu 22.04 LTS
+- **Sistema**: Ubuntu 24.04 LTS
 - **Região**: sa-east-1 (São Paulo)
 - **Security Group**: Portas 22 (SSH), 80 (HTTP), 443 (HTTPS)
 
@@ -288,24 +288,92 @@ DB_ROOT_PASSWORD=rootpassword
 
 ### Pré-requisitos
 
-- Docker & Docker Compose
+- Docker & Docker Compose (versão 20.10+)
 - Git
+- Sistema operacional: Linux/macOS/Windows com WSL2
 
-### Instalação
+### Instalação Automatizada
+
+O projeto inclui um script que automatiza todo o processo de setup:
 
 ```bash
 # 1. Clonar repositório
 git clone https://github.com/pvss-dev/alpesone-test.git
 cd alpesone-test
 
-# 2. Alterar a permissão do script run.sh
+# 2. Dar permissão de execução ao script
 chmod +x run.sh
 
-# 3. Rodar o script run.sh
+# 3. Executar setup automatizado
 ./run.sh
+```
 
-# 4. Acessar a documentação no navegador
-http://localhost/api/documentation
+### Script de Deploy Local (run.sh)
+
+O script `run.sh` automatiza completamente o setup local da aplicação:
+
+#### Fluxo de execução:
+
+1. **Build e Deploy dos Containers**
+    - Remove containers existentes para garantir ambiente limpo
+    - Reconstrói todas as imagens sem cache (`--no-cache`)
+    - Sobe os containers em background
+
+2. **Configuração da Aplicação**
+    - Aguarda o container da aplicação ficar saudável (healthcheck)
+    - Cria arquivo `.env` diretamente no container com configurações otimizadas para Docker
+    - Executa sequência de comandos Artisan:
+        - `key:generate` - Gera chave de criptografia
+        - `config:clear/cache` - Limpa e recria cache de configurações
+        - `route:cache` - Otimiza rotas para performance
+        - `migrate --force` - Executa migrações do banco
+        - `db:seed --force` - Popula dados iniciais
+        - `l5-swagger:generate` - Gera documentação da API
+        - `app:import-vehicles` - Importa dados da API externa
+
+#### Vantagens da abordagem:
+
+- **Zero configuração**: Não requer instalação local do PHP/Composer
+- **Isolamento completo**: Tudo roda dentro dos containers
+- **Consistência**: Mesmo ambiente entre desenvolvimento e produção
+- **Automação**: Um único comando configura tudo
+
+### Verificação da Instalação
+
+Após a execução bem-sucedida do script:
+
+- **Aplicação**: http://localhost
+- **API**: http://localhost/api/vehicles (requer autenticação)
+- **Documentação**: http://localhost/api/documentation
+- **Status dos containers**: `docker compose -f docker-compose.local.yml ps`
+
+### Diferenças entre Ambientes
+
+| Aspecto      | Local               | Produção            |
+|--------------|---------------------|---------------------|
+| Domínio      | localhost           | pvss-dev.ddns.net   |
+| HTTPS        | Não                 | Sim (Let's Encrypt) |
+| Deploy       | Script manual       | GitHub Actions      |
+| Configuração | `.env` no container | Secrets do GitHub   |
+
+### Solução de Problemas
+
+#### Container não fica "healthy"
+
+```bash
+# Verificar logs da aplicação
+docker compose -f docker-compose.local.yml logs app
+
+# Verificar status dos containers
+docker compose -f docker-compose.local.yml ps
+```
+
+#### Problemas de permissão
+
+```bash
+# Limpar containers e volumes
+docker compose -f docker-compose.local.yml down -v
+./run.sh
 ```
 
 ### Configurar Cron (Produção)
@@ -324,16 +392,16 @@ crontab -e
 
 ```bash
 # Todos os testes
-docker compose exec app php artisan test
+docker compose -f docker-compose.local.yml exec app php artisan test
 
 # Apenas testes unitários
-docker compose exec app php artisan test --testsuite=Unit
+docker compose -f docker-compose.local.yml exec app php artisan test --testsuite=Unit
 
 # Apenas testes de integração
-docker compose exec app php artisan test --testsuite=Feature
+docker compose -f docker-compose.local.yml exec app php artisan test --testsuite=Feature
 
 # Com coverage
-docker compose exec app php artisan test --coverage
+docker compose -f docker-compose.local.yml exec app php artisan test --coverage
 ```
 
 ### Estrutura de Testes

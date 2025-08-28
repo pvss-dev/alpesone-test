@@ -23,6 +23,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./.docker/nginx/local:/etc/nginx/conf.d
+      - .:/var/www/html
     depends_on:
       app:
         condition: service_healthy
