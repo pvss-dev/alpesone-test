@@ -35,7 +35,7 @@ DB_CONNECTION=mysql
 DB_HOST=db-mysql
 DB_PORT=3306
 DB_DATABASE=my_database
-DB_USERNAME=root
+DB_USERNAME=user
 DB_PASSWORD=password
 DB_ROOT_PASSWORD=password
 EOF
