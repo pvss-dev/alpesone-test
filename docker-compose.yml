@@ -39,8 +39,7 @@ services:
         restart: unless-stopped
         volumes:
             - ./.docker/nginx/prod:/etc/nginx/conf.d
-            - ./.docker/letsencrypt/etc:/etc/letsencrypt
-            - ./.docker/letsencrypt/var/log:/var/log/letsencrypt
+            - /etc/letsencrypt:/etc/letsencrypt:ro
             - .:/var/www/html
         depends_on:
             app:
