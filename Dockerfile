@@ -33,4 +33,8 @@ RUN rm -f .env
 
 RUN chown -R www-data:www-data /var/www/html
 
+RUN chmod -R ug+w /var/www/html/storage
+
+RUN chmod -R ug+w /var/www/html/bootstrap/cache
+
 USER www-data

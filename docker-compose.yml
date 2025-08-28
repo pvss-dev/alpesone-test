@@ -38,7 +38,7 @@ services:
         container_name: alpesone-nginx
         restart: unless-stopped
         volumes:
-            - ./.docker/nginx:/etc/nginx/conf.d
+            - ./.docker/nginx/prod:/etc/nginx/conf.d
             - ./.docker/letsencrypt/etc:/etc/letsencrypt
             - ./.docker/letsencrypt/var/log:/var/log/letsencrypt
             - .:/var/www/html

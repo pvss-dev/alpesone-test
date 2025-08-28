@@ -135,6 +135,7 @@ jobs:
           DB_USERNAME=${{ secrets.DB_USERNAME }}
           DB_PASSWORD=${{ secrets.DB_PASSWORD }}
           DB_ROOT_PASSWORD=${{ secrets.DB_ROOT_PASSWORD }}
+          L5_SWAGGER_CONST_HOST=${{ secrets.APP_URL }}
           EOF
 
       - name: Deploy

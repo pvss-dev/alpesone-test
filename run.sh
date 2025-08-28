@@ -9,82 +9,74 @@ COLOR_RESET=$(tput sgr0)
 
 echo "${COLOR_BLUE}--- INICIANDO SCRIPT DE DEPLOY LOCAL (ZERO-CONFIG) ---${COLOR_RESET}"
 
-echo "\n${COLOR_YELLOW}PASSO 1: Preparando e configurando o ambiente...${COLOR_RESET}"
-
-echo "Instalando dependências do Composer para usar o Artisan..."
-composer install --no-interaction --prefer-dist --optimize-autoloader
-
-echo "Gerando uma nova APP_KEY para o ambiente..."
-GENERATED_APP_KEY=$(php artisan key:generate --show)
-
-echo "Criando arquivo .env com configurações de desenvolvimento..."
-cat > .env << EOF
-# Arquivo gerado automaticamente por deploy-local.sh
-APP_NAME="Alpes One Test"
-APP_ENV=local
-APP_KEY=${GENERATED_APP_KEY}
-APP_DEBUG=true
-APP_URL=http://localhost
-
-LOG_CHANNEL=stack
-LOG_LEVEL=debug
-
-DB_CONNECTION=mysql
-DB_HOST=db-mysql
-DB_PORT=3306
-DB_DATABASE=my_database
-DB_USERNAME=user
-DB_PASSWORD=password
-DB_ROOT_PASSWORD=password
-EOF
-
-echo "${COLOR_GREEN}Arquivo .env criado com sucesso!${COLOR_RESET}"
-
-echo "Ajustando permissões das pastas storage e bootstrap/cache..."
-sudo chmod -R 777 storage bootstrap/cache
-
-echo "${COLOR_GREEN}Ambiente preparado com sucesso!${COLOR_RESET}"
-
-# --- 2. BUILD DAS IMAGENS DOCKER ---
-echo "\n${COLOR_YELLOW}PASSO 2: Construindo as imagens Docker (Build)...${COLOR_RESET}"
-docker compose -f docker-compose.local.yml build --no-cache
-
-echo "${COLOR_GREEN}Imagens construídas com sucesso!${COLOR_RESET}"
-
-# --- 3. SUBINDO OS CONTÊINERES ---
-echo "\n${COLOR_YELLOW}PASSO 3: Subindo os contêineres (Deploy)...${COLOR_RESET}"
+echo "\n${COLOR_YELLOW}PASSO 1: Construindo e subindo os contêineres...${COLOR_RESET}"
 docker compose -f docker-compose.local.yml down
+docker compose -f docker-compose.local.yml build --no-cache
 docker compose -f docker-compose.local.yml up -d
+echo "${COLOR_GREEN}Contêineres construídos e iniciados com sucesso!${COLOR_RESET}"
 
-echo "${COLOR_GREEN}Contêineres iniciados com sucesso!${COLOR_RESET}"
 
-# --- 4. COMANDOS PÓS-DEPLOY ---
-echo "\n${COLOR_YELLOW}PASSO 4: Executando comandos pós-deploy...${COLOR_RESET}"
+echo "\n${COLOR_YELLOW}PASSO 2: Configurando a aplicação DENTRO do contêiner...${COLOR_RESET}"
 
 echo "Aguardando a aplicação ficar saudável (até 60s)..."
-timeout 60s bash -c 'until docker compose ps | grep alpesone-app | grep -q healthy; do sleep 2; done' || true
+timeout 60s bash -c 'until docker compose -f docker-compose.local.yml ps | grep alpesone-app | grep -q healthy; do sleep 2; done' || true
 
 if ! docker compose -f docker-compose.local.yml ps | grep alpesone-app | grep -q healthy; then
     echo "Erro: A aplicação não ficou saudável a tempo. Verifique os logs com 'docker compose logs app'."
     exit 1
 fi
 
-echo "Aplicação está saudável! Rodando comandos artisan..."
-COMMANDS=(
+echo "Aplicação está saudável! Rodando comandos de setup..."
+
+echo "Criando arquivo .env no contêiner..."
+cat <<EOF | docker compose -f docker-compose.local.yml exec -T app sh -c 'cat > .env'
+#======================================================================
+# APPLICATION CONFIGURATION
+#======================================================================
+APP_NAME="Alpes One Test"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+#======================================================================
+# LOG CONFIGURATION
+#======================================================================
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+#======================================================================
+# DATABASE CONFIGURATION
+#======================================================================
+DB_CONNECTION=mysql
+DB_HOST=db-mysql
+DB_PORT=3306
+DB_DATABASE=my_database
+DB_USERNAME=user
+DB_PASSWORD=123
+DB_ROOT_PASSWORD=123
+#======================================================================
+# SWAGGER CONFIGURATION
+#======================================================================
+L5_SWAGGER_CONST_HOST=http://localhost
+EOF
+
+SETUP_COMMANDS=(
+  "php artisan key:generate"
   "php artisan config:clear"
   "php artisan config:cache"
   "php artisan route:cache"
   "php artisan migrate --force"
   "php artisan db:seed --force"
   "php artisan l5-swagger:generate"
+  "php artisan app:import-vehicles"
 )
 
-for cmd in "${COMMANDS[@]}"; do
-    echo "Executando: docker compose exec -T app ${cmd}"
+for cmd in "${SETUP_COMMANDS[@]}"; do
+    echo "Executando no contêiner: ${cmd}"
     docker compose -f docker-compose.local.yml exec -T app ${cmd}
 done
 
-echo "${COLOR_GREEN}Comandos pós-deploy executados com sucesso!${COLOR_RESET}"
+echo "${COLOR_GREEN}Configuração da aplicação concluída com sucesso!${COLOR_RESET}"
 
 echo "\n${COLOR_BLUE}--- SCRIPT DE DEPLOY LOCAL CONCLUÍDO ---${COLOR_RESET}"
 echo "Sua aplicação está no ar e pronta para uso em http://localhost"
