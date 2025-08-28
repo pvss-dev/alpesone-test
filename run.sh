@@ -20,8 +20,6 @@ GENERATED_APP_KEY=$(php artisan key:generate --show)
 echo "Criando arquivo .env com configurações de desenvolvimento..."
 cat > .env << EOF
 # Arquivo gerado automaticamente por deploy-local.sh
-DOCKERHUB_USERNAME=local
-
 APP_NAME="Alpes One Test"
 APP_ENV=local
 APP_KEY=${GENERATED_APP_KEY}

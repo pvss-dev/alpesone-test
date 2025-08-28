@@ -298,33 +298,14 @@ DB_ROOT_PASSWORD=rootpassword
 git clone https://github.com/pvss-dev/alpesone-test.git
 cd alpesone-test
 
-# 2. Configurar ambiente
-cp .env.example .env
+# 2. Alterar a permissão do script run.sh
+chmod +x run.sh
 
-# Editar .env com configurações locais
-nano .env
+# 3. Rodar o script run.sh
+./run.sh
 
-# Exemplo de configurações para o banco de dados:
-DOCKERHUB_USERNAME=teste
-DB_CONNECTION=mysql
-DB_HOST=alpesone-mysql
-DB_PORT=3306
-DB_DATABASE=my_database
-DB_USERNAME=user
-DB_PASSWORD=123
-DB_ROOT_PASSWORD=123
-
-# 3. Construir e iniciar containers
-docker compose up -d --build
-
-# 4. Configurar aplicação
-docker compose exec app php artisan key:generate
-docker compose exec app php artisan migrate
-docker compose exec app php artisan db:seed
-docker compose exec app php artisan l5-swagger:generate
-
-# 5. Importar dados iniciais
-docker compose exec app php artisan app:import-vehicles
+# 4. Acessar a documentação no navegador
+http://localhost/api/documentation
 ```
 
 ### Configurar Cron (Produção)
