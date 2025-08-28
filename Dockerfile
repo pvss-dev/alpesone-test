@@ -10,7 +10,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 COPY composer.* ./
 
-RUN composer install --no-dev --optimize-autoloader --no-scripts
+RUN composer install --optimize-autoloader --no-scripts
 
 COPY . .
 
